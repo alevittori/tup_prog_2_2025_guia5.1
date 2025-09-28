@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Models\Intimacion.cs" />
     <Compile Include="Models\IntimacionParser.cs" />
+    <Compile Include="Models\IntimacionRegexParse.cs" />
     <Compile Include="Models\ScrapingChar.cs" />
     <Compile Include="Models\ScrapingRegex.cs" />
     <Compile Include="Program.cs" />

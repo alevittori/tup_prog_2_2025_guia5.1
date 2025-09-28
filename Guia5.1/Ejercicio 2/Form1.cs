@@ -15,6 +15,7 @@ namespace Ejercicio_2
     {
         List<Intimacion> intimaciones;
         ScrapingChar analizarChar;
+        ScrapingRegex analizarRegex;
 
         string texto = @"Paraná, 20 de Diciembre de 2024
 Sr(a) Medina Noemí, El despacho JURÍDICO GUTIERREZ & ASOCIADOS, mediante el
@@ -30,11 +31,12 @@ cantidad de $6.000,00 (seis mil pesos).";
             InitializeComponent();
             intimaciones = new List<Intimacion>();
             analizarChar = new ScrapingChar();
+            analizarRegex = new ScrapingRegex();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Gracias por usar nuestros sistemas");
+            MessageBox.Show("Gracias por usar nuestros sistemas", "Salir");
             Close();
         }
 
@@ -50,6 +52,17 @@ cantidad de $6.000,00 (seis mil pesos).";
                     intimaciones.Add(intimacionConDatos);
                     tbDatos.Text = intimacionConDatos.ToString();
                 }
+            }
+            if (rbRegex.Checked)
+            {
+                Intimacion intimacionConDatos;
+                intimacionConDatos = analizarRegex.ExtraerDatos(texto);
+                if(intimacionConDatos!= null)
+                {
+                    intimaciones.Add(intimacionConDatos);
+                    tbDatos.Text = intimacionConDatos.ToString();
+                }
+
             }
 
         }

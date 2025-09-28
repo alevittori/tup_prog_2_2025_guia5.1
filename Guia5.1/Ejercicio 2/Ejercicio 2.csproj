@@ -55,6 +55,7 @@
     <Compile Include="Models\Intimacion.cs" />
     <Compile Include="Models\IntimacionParser.cs" />
     <Compile Include="Models\ScrapingChar.cs" />
+    <Compile Include="Models\ScrapingRegex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

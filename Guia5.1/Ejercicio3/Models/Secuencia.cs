@@ -20,14 +20,14 @@ namespace Ejercicio3.Models
         }
         public void ProcesarCadena(ValidacionRegexDeCadenas validador)
         {
-            Verificada = validador.EsCadenaValida(CadenaOriginal, out string procesada);
+            Verificada = validador.EsCadenaValida(CadenaOriginal, out string procesada); //verificamos si es una cadena valida, y retornamo el conjunto de aminoacidos
 
             if (Verificada)
             {
                 CadenaProcesada = procesada;
-                ProteinaTraducida = new Proteina
+                ProteinaTraducida = new Proteina //creamos una proteina
                 {
-                    Aminoacidos = validador.ClasificarCodones(procesada)
+                    Aminoacidos = validador.ClasificarCodones(procesada) // y aca le pasamos los aminoacidos obtenido en la validacion de cadena
                 };
             }
         }
@@ -35,8 +35,8 @@ namespace Ejercicio3.Models
         public override string ToString()
         {
             return Verificada
-                ? $"Secuencia válida: {CadenaProcesada}\n{ProteinaTraducida}"
-                : $"Secuencia inválida: {CadenaOriginal}";
+                ? $"Secuencia válida: {CadenaProcesada}\n{ProteinaTraducida} "
+                : $"Secuencia inválida: {CadenaOriginal} ";
         }
     }
 }

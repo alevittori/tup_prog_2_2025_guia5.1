@@ -20,7 +20,7 @@ namespace Ejercicio3.Models
 
         public override string ToString()
         {
-            return $"Proteína: {Nombre}";
+            return $" Proteína: {Nombre}";
         }
     }
 }
